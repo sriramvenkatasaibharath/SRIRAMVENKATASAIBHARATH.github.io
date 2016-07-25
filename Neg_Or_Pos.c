@@ -6,7 +6,7 @@ void main()
   scanf("%d",&num)
  if(num>0)
 {
-printf("%d"num%100);
+printf("%d",num%100);
 }
 else if(num<0)
 {
