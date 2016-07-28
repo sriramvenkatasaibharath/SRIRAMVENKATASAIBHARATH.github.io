@@ -10,4 +10,5 @@ if(character>='0'&&character<='9')
 else
   printf("%c is character",character);
 }
+getch();
 }
