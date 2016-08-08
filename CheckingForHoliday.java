@@ -14,7 +14,11 @@ class Ideone
       {
       System.out.println("false");
       }
-      else
+      else if(LowerInputDay.equals("monday")||LowerInputDay.equals("tuesday")||LowerInputDay.equals("wednesday")||LowerInputDay.equals("thursday")||LowerInputDay.equals("friday"))
       System.out.println("true");
+else
+System.out.println("please provide valid day.........");
 	}
+
+
 }
