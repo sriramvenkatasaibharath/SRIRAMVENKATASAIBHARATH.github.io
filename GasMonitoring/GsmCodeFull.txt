@@ -1,0 +1,60 @@
+#include<String.h>
+void Send_SMS();
+void Receive_SMS();
+void Dial_a_Call();
+void Answer_a_Call();
+void setup()
+{
+ Serial.begin(9600);
+ Serial1.begin(115200);
+}
+
+void loop() 
+{
+ if(Serial.available())
+ {
+ switch(Serial.read())
+ {
+ case's':Send_SMS();
+ break;
+ case'r':Receive_SMS();
+ break;
+ case'd':Dial_a_Call();
+ break;
+ case'a':Answer_a_Call();
+ break;
+ }}
+if(Serial1.available())
+Serial.write(Serial1.read());
+
+}
+void Send_SMS()
+{
+  Serial1.println("AT+CMGF=1\r");
+  delay(150);
+  Serial1.println("AT+CMGS=\"9789950995\"");
+  delay(150);
+  Serial1.println("GSM Message");
+  delay(150);
+  Serial.println((char)26);
+  delay(150);
+}
+void Receive_SMS()
+{
+  Serial1.println("AT+CMGF=1\r");
+  delay(150);
+  Serial1.println("AT+CPMS=\"SM\"");
+  delay(150);
+  Serial1.println("AT+CMGL=\"ALL\"");
+  delay(150);
+}
+void Dial_a_Call()
+{
+  Serial1.println("ATD+91\"9789950995\"");
+  delay(150);
+}
+void Answer_a_Call()
+{
+  Serial1.println("ATH+91\"9092450528\"");
+  delay(150);
+}
